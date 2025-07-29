@@ -2,7 +2,7 @@
 
 A responsive and interactive dashboard to explore financial seasonality using calendar views, volatility heatmaps, liquidity indicators, and performance metrics.
 
-📄 See full project documentation in [DOCUMENTATION.md](./DOCUMENTATION.md)
+📄 See full project documentation in [DOCUMENTATION.md](./code_documentation.md)
 
 ## 🔗 Live Demo
 
