@@ -11,9 +11,8 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import { useContext, useState, useEffect } from 'react';
-import { ColorModeContext } from "./ColorMode";
-
+import { useState, useEffect } from 'react';
+import { useColorMode } from "./ColorModeContext";
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { useTheme } from '@mui/material/styles';
@@ -320,7 +319,7 @@ const Calendar = ({ selectedRange, onDateClick, viewLevel, onZoomIn, onZoomOut }
 };
 
 export default function Home() {
-  const colorMode = useContext(ColorModeContext);
+  const colorMode = useColorMode();
   const theme = useTheme();
   const [selectedMarket, setSelectedMarket] = useState('');
   const [selectedSeason, setSelectedSeason] = useState('');
@@ -508,7 +507,7 @@ export default function Home() {
       {/* Theme toggle button */}
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 3 }}>
         <IconButton onClick={colorMode.toggleColorMode} color="inherit">
-          {theme.palette.mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
+          {colorMode.mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
         </IconButton>
       </Box>
       

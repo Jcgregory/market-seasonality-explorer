@@ -1,8 +1,7 @@
 // app/layout.tsx
 //import type { Metadata } from "next";
-import { ColorModeContext } from "./ColorMode";
+import './globals.css';
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import ClientProviders from "./Clientproviders"; // ✅ Importing from separate file
 
 const geistSans = Geist({
