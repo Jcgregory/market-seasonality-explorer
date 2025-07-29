@@ -12,7 +12,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import { useContext, useState, useEffect } from 'react';
-import { ColorModeContext } from './layout';
+import { ColorModeContext } from "./ColorMode";
+
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { useTheme } from '@mui/material/styles';

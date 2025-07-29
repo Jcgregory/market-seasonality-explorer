@@ -1,10 +1,9 @@
-"use client";
-
-import type { Metadata } from "next";
+// app/layout.tsx
+//import type { Metadata } from "next";
+import { ColorModeContext } from "./ColorMode";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import React, { createContext, useMemo, useState } from "react";
-import { ThemeProvider, CssBaseline, createTheme, PaletteMode } from "@mui/material";
+import ClientProviders from "./Clientproviders"; // ✅ Importing from separate file
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,38 +15,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Theme context for toggling
-export const ColorModeContext = createContext({ toggleColorMode: () => {} });
+{/*export const metadata: Metadata = {
+  title: "Market Seasonality Explorer",
+  description: "Explore volatility, liquidity, and performance over time",
+};*/}
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [mode, setMode] = useState<PaletteMode>("dark");
-  const colorMode = useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-      },
-    }),
-    []
-  );
-  const theme = useMemo(() => createTheme({
-    palette: {
-      mode,
-    },
-  }), [mode]);
-
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ColorModeContext.Provider value={colorMode}>
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-        {children}
-          </ThemeProvider>
-        </ColorModeContext.Provider>
+        <ClientProviders>{children}</ClientProviders>
       </body>
     </html>
   );
