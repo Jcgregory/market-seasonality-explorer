@@ -4,7 +4,7 @@ A responsive and interactive dashboard to explore financial seasonality using ca
 
 ## 🔗 Live Demo
 
-[View on Vercel](https://market-seasonality-explorer-zeta.vercel.app/))
+[View on Vercel](https://market-seasonality-explorer-zeta.vercel.app/)
 
 ---
 
