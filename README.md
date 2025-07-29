@@ -53,6 +53,5 @@ Made with ❤️ using Next.js, MUI, and Recharts.
 
 ---
 
-### ✅ Replace this line:
 ```markdown
 git clone https://github.com/Jcgregory/market-seasonality-explorer.git
